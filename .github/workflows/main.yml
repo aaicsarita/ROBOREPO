@@ -13,10 +13,11 @@ jobs:
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ""
-        aws-secret-access-key: ""
-        aws-region: us-east-1 # Use your bucket region here
-    # Here you could add some building steps if you were dealing with some angular/react/Vue...
+        AWS_ACCESS_KEY_ID: "${{ secrets.AWS_ACCESS_KEY_ID }}"
+        AWS_DEFAULT_REGION: "${{ secrets.AWS_DEFAULT_REGION}}"
+        AWS_SECRET_ACCESS_KEY: "${{ secrets.AWS_SECRET_ACCESS_KEY}}"  # Use your bucket region here
+ 
+ # Here you could add some building steps if you were dealing with some angular/react/Vue...
     # - name: Build static site
     #  run: yarn install && npm run-script build
     - name: Install AWS CLI v2
